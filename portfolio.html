@@ -51,6 +51,43 @@
 
     <div class="accordion" id="portfolioAccordion">
         <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTravellingWithTaste">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTravellingWithTaste" aria-expanded="false" aria-controls="collapseTravellingWithTaste">
+                    Travelling With Taste
+                </button>
+            </h2>
+            <div id="collapseTravellingWithTaste" class="accordion-collapse collapse" aria-labelledby="headingTravellingWithTaste" data-bs-parent="#portfolioAccordion">
+                <div class="accordion-body">
+                    <p><strong>Beta:</strong> <a href="https://ratgoosesuitstudios.github.io/releases/" target="_blank">https://ratgoosesuitstudios.github.io/releases/</a></p>
+                    <p>Travelling With Taste is a stealth/puzzle game with unconventional movement developed over the course of 6 weeks in Unreal Engine. Our team consists of 7 people.
+					<br><br>
+					I was specifically focused on programming the player, which is a suitcase that uses tank-style controls to move. The player can sprint to increase their speed, throw cheese to distract guards, and extend the suitcase handle to interact with the world and launch off of walls.</p>
+                    <h4>Challenges:</h4>
+                    <ul>
+						<li>Due to this game having non-standard movement, the player physics underwent many changes. To make the tweaking process more efficient, I created easily editable variables for basically every part of the player movement. This allowed for rapid testing, as well as making future systems very easy to add on.</li>
+						<br>
+                        <li>I used Unreal's built-in physics, and controlled the player using "Add Impulse". However, this lacks fine control and is hard to perfectly cap the player's velocity without them going faster for some time. I solved this by normalizing the movement vector so that the add impulse adds a decreasing amount of velocity to the player.</li>
+						<br>
+                        <li>The player would bounce off of objects and spin rapidly, causing great difficultly in controlling it. Unreal has a variable called "Angular Damping" that solved this, by damping the rotational effect the player receives. However, this also caused the player's gravity to be reduced as them rotating in the air is also damped. To counteract this, I added an extra gravity force.</li>
+                    </ul>
+                    <h4>Visuals:</h4>
+					<div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+						<div style="flex: 1; max-width: 50%; display: flex; flex-direction: column; gap: 10px;">
+							<video controls style="width: 100%; height: auto;">
+								<source src="assets/Travelling With Taste - Trailer.mp4" type="video/mp4">
+							</video>
+							<img src="assets/Game Architecture.png" alt="Single Image" style="width:800px; max-width:100%; height:auto;">
+						</div>
+						<div style="flex: 1; max-width: 30%;">
+							<img src="assets/Player Variables.png" alt="Single Image" style="width:800px; max-width:100%; height:auto;">
+							<img src="assets/Player Movement.png" alt="Single Image" style="width:800px; max-width:100%; height:auto;">
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+		
+		<div class="accordion-item">
             <h2 class="accordion-header" id="headingLittleWhamlings">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLittleWhamlings" aria-expanded="false" aria-controls="collapseLittleWhamlings">
                     Little Whamlings
@@ -72,15 +109,12 @@
                     </ul>
                     <h4>Visuals:</h4>
 					<div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-						<!-- Left Column: Video and GIF stacked -->
 						<div style="flex: 1; max-width: 50%; display: flex; flex-direction: column; gap: 10px;">
 							<video controls style="width: 100%; height: auto;">
 								<source src="assets/Little Whammo Level Demo.mp4" type="video/mp4">
 							</video>
 							<img src="assets/Little Whamlings 1.gif" alt="GIF 1" style="width: 100%; height: auto;">
 						</div>
-						
-						<!-- Right Column: Tall GIF -->
 						<div style="flex: 1; max-width: 30%;">
 							<img src="assets/Little Whamlings 2.gif" alt="Tall GIF" style="width: 100%; height: 100%; object-fit: cover;">
 						</div>
